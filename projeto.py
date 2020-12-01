@@ -18,76 +18,84 @@ Perguntas de quantidade começam com "Quanto" (Exemplo: "Quanto está o dollar h
 Perguntas de ordem começam com "Me" (Exemplo: "Me conte uma piada?")
 """)
 verificacao = 0
-try:
-    a = input("Faça uma pergunta: ")
-except ValueError:
-    print("Um erro ocorreu em sua resposta.")
-if a.__contains__("?") == False:
-    raise Exception("Favor inserir uma pergunta!!")
-perguntaConvertida = [g.lower() for g in listaPerguntas] 
-for x in perguntaConvertida:
-    while a.lower()==x:
-        for i in listaRespostas:
-            if perguntaConvertida.index(x) == listaRespostas.index(i):
-                verificacao = 1
-                b = listaRespostas.index(i)
-                b1 = perguntaConvertida.index(x)
-                if b1 == 0:
-                    print("Depende, como está o clima?")
-                    aaa = input("")
-                    if aaa.lower() == "ensolarado":
-                        print("Então não saia!")
-                        break
-                    if aaa.lower() == "chuvoso" or aaa.lower() == "umido":
-                        print("Saia, mas não esqueça do Guarda-Chuva!!")
-                        break
-                    else:
-                        print("Saia, mas tome cuidado")
-                        break
-                if b1 == 1:
-                    print("Depende, qual seu signo?")
-                    aaa = input("")
-                    if aaa.lower() == "aries" or aaa.lower() == "áries":
-                        print("Agradeça aos antepassados pela sabedoria recebida que será valorosa nestes tempos de mudanças e de provações.")
-                        break
-                    if aaa.lower() == "touro":
-                        print("Mesmo no feriado, negociações de trabalho estarão em andamento. A semana sinaliza mudanças nas parcerias e novas conexões.")
-                        break
-                    if aaa.lower() == "gêmeos" or aaa.lower() == "gemeos":
-                        print("Mercúrio, seu planeta regente, andando para a frente, movimentará a semana com ideias criativas e soluções originais.")
-                        break
-                    if aaa.lower() == "câncer" or aaa.lower() == "cancer":
-                        print("Encontre um ponto de equilíbrio entre o que você deseja e o que será possível realizar neste período de restrições.")
-                        break
-                    if aaa.lower() == "leão" or aaa.lower() == "leao":
-                        print("Semana importante na carreira. Ganhe popularidade e projeção. Mercúrio andando para a frente facilitará divulgações e comunicações de trabalho.")
-                        break
-                    if aaa.lower() == "virgem":
-                        print("Negociações financeiras terão andamento positivo nesta semana, com Mercúrio já em movimento direto.")
-                        break
-                    if aaa.lower() == "libra":
-                        print("Determine objetivos, planeje uma viagem com antecedência e inicie relações num novo padrão.")
-                        break
-                    if aaa.lower() == "escorpião" or aaa.lower() == "escorpiao":
-                        print("Novidades chegarão por todos os lados, nesta semana. Pense positivo e impulsione novo projeto de trabalho.")
-                        break
-                    if aaa.lower() == "sagitário" or aaa.lower() == "sagitario":
-                        print("Entendimento com parceiros, equipe e amizades movimentarão negócios, nesta semana.")
-                        break
-                    if aaa.lower() == "capricórnio" or aaa.lower() == "capricornio":
-                        print("Aprove um projeto, amplie comunicações profissionais e aposte em metas mais altas. Mercúrio em movimento direto impactará diretamente na carreira.")
-                        break
-                    if aaa.lower() == "aquário" or aaa.lower() == "aquario":
-                        print("A semana será decisiva no amor. Renove os sentimentos e aumente a confiança nos projetos da vida íntima. Mercúrio em movimento direto trará mais otimismo.")
-                        break
-                    if aaa.lower() == "peixes":
-                        print("Decisões financeiras envolverão a família e o amor. A semana favorecerá o casamento e associações.")
-                        break
-                else:
-                    print(listaRespostas[b])
-                    break
-        break
+pergunta = 1
 
-if verificacao == 0:
-    print("A pergunta não pode ser respondida!! Favor verificar a ortografia ou a estrutura da pergunta.")
-    print("Se ainda não funcionou, a pergunta pode não estar no nosso banco de dados.")
+while pergunta != 0: 
+    try:
+        a = input("Faça uma pergunta: ")
+    except ValueError:
+        print("Um erro ocorreu em sua resposta.")
+    if a.__contains__("?") == False:
+        raise Exception("Favor inserir uma pergunta!!")
+    perguntaConvertida = [g.lower() for g in listaPerguntas] 
+    for x in perguntaConvertida:
+        while a.lower()==x:
+            for i in listaRespostas:
+                if perguntaConvertida.index(x) == listaRespostas.index(i):
+                    verificacao = 1
+                    b = listaRespostas.index(i)
+                    b1 = perguntaConvertida.index(x)
+                    if b1 == 0:
+                        print("Depende, como está o clima?")
+                        aaa = input("")
+                        if aaa.lower() == "ensolarado":
+                            print("Então não saia!")
+                            break
+                        if aaa.lower() == "chuvoso" or aaa.lower() == "umido":
+                            print("Saia, mas não esqueça do Guarda-Chuva!!")
+                            break
+                        else:
+                            print("Saia, mas tome cuidado")
+                            break
+                    if b1 == 1:
+                        print("Depende, qual seu signo?")
+                        aaa = input("")
+                        if aaa.lower() == "aries" or aaa.lower() == "áries":
+                            print("Agradeça aos antepassados pela sabedoria recebida que será valorosa nestes tempos de mudanças e de provações.")
+                            break
+                        if aaa.lower() == "touro":
+                            print("Mesmo no feriado, negociações de trabalho estarão em andamento. A semana sinaliza mudanças nas parcerias e novas conexões.")
+                            break
+                        if aaa.lower() == "gêmeos" or aaa.lower() == "gemeos":
+                            print("Mercúrio, seu planeta regente, andando para a frente, movimentará a semana com ideias criativas e soluções originais.")
+                            break
+                        if aaa.lower() == "câncer" or aaa.lower() == "cancer":
+                            print("Encontre um ponto de equilíbrio entre o que você deseja e o que será possível realizar neste período de restrições.")
+                            break
+                        if aaa.lower() == "leão" or aaa.lower() == "leao":
+                            print("Semana importante na carreira. Ganhe popularidade e projeção. Mercúrio andando para a frente facilitará divulgações e comunicações de trabalho.")
+                            break
+                        if aaa.lower() == "virgem":
+                            print("Negociações financeiras terão andamento positivo nesta semana, com Mercúrio já em movimento direto.")
+                            break
+                        if aaa.lower() == "libra":
+                            print("Determine objetivos, planeje uma viagem com antecedência e inicie relações num novo padrão.")
+                            break
+                        if aaa.lower() == "escorpião" or aaa.lower() == "escorpiao":
+                            print("Novidades chegarão por todos os lados, nesta semana. Pense positivo e impulsione novo projeto de trabalho.")
+                            break
+                        if aaa.lower() == "sagitário" or aaa.lower() == "sagitario":
+                            print("Entendimento com parceiros, equipe e amizades movimentarão negócios, nesta semana.")
+                            break
+                        if aaa.lower() == "capricórnio" or aaa.lower() == "capricornio":
+                            print("Aprove um projeto, amplie comunicações profissionais e aposte em metas mais altas. Mercúrio em movimento direto impactará diretamente na carreira.")
+                            break
+                        if aaa.lower() == "aquário" or aaa.lower() == "aquario":
+                            print("A semana será decisiva no amor. Renove os sentimentos e aumente a confiança nos projetos da vida íntima. Mercúrio em movimento direto trará mais otimismo.")
+                            break
+                        if aaa.lower() == "peixes":
+                            print("Decisões financeiras envolverão a família e o amor. A semana favorecerá o casamento e associações.")
+                            break
+                    else:
+                        print(listaRespostas[b])
+                        break
+            break
+
+    if verificacao == 0:
+        print("A pergunta não pode ser respondida!! Favor verificar a ortografia ou a estrutura da pergunta.")
+        print("Se ainda não funcionou, a pergunta pode não estar no nosso banco de dados.")
+    pergunta = int(input("""Você quer fazer mais uma pergunta?
+    1- Sim
+    0- Não
+    """))
+    

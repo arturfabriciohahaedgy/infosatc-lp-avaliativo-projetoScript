@@ -17,7 +17,7 @@ Perguntas de data ou horario começam com "Quando" (Exemplo: "Quando foi proclam
 Perguntas de quantidade começam com "Quanto" (Exemplo: "Quanto está o dollar hoje?")
 Perguntas de ordem começam com "Me" (Exemplo: "Me conte uma piada?")
 """)
-d = 0
+verificacao = 0
 try:
     a = input("Faça uma pergunta: ")
 except ValueError:
@@ -26,10 +26,10 @@ if a.__contains__("?") == False:
     raise Exception("Favor inserir uma pergunta!!")
 perguntaConvertida = [g.lower() for g in listaPerguntas] 
 for x in perguntaConvertida:
-    d = d + 1
     while a.lower()==x:
         for i in listaRespostas:
             if perguntaConvertida.index(x) == listaRespostas.index(i):
+                verificacao = 1
                 b = listaRespostas.index(i)
                 b1 = perguntaConvertida.index(x)
                 if b1 == 0:
@@ -87,3 +87,7 @@ for x in perguntaConvertida:
                     print(listaRespostas[b])
                     break
         break
+
+if verificacao == 0:
+    print("A pergunta não pode ser respondida!! Favor verificar a ortografia ou a estrutura da pergunta.")
+    print("Se ainda não funcionou, a pergunta pode não estar no nosso banco de dados.")
